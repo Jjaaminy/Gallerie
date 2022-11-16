@@ -20,20 +20,28 @@ function App() {
         <img src="https://picsum.photos/800/600?random=7" onDragStart={handleDragStart} role="presentation"/>,
         <img src="https://picsum.photos/800/600?random=8" onDragStart={handleDragStart} role="presentation"/>,
         <img src="https://picsum.photos/800/600?random=9" onDragStart={handleDragStart} role="presentation"/>,
-
     ];
 
     return (
         <div>
             <header>
-            <h1>Gallery</h1>
-                </header>
-            <AliceCarousel mouseTracking items={items}/>
-            <p>
+                <h1>Bildergallerie</h1>
+            </header>
+            <div>
+                    <img src="https://picsum.photos/800/600?random=1"/>,
+                    <img src="https://picsum.photos/800/600?random=2"/>,
+                    <img src="https://picsum.photos/800/600?random=3"/>
+                    <img src="https://picsum.photos/800/600?random=4"/>
+                    <img src="https://picsum.photos/800/600?random=5"/>
+            </div>
+            <footer>
+                <AliceCarousel mouseTracking items={items}/>
                 <image mouseTracking items={items}/>
-            </p>
+            </footer>
         </div>
     );
-}
 
+}
 export default App;
+
+
