@@ -27,16 +27,8 @@ function App() {
             <header>
                 <h1>Bildergallerie</h1>
             </header>
-            <div>
-                    <img src="https://picsum.photos/800/600?random=1"/>,
-                    <img src="https://picsum.photos/800/600?random=2"/>,
-                    <img src="https://picsum.photos/800/600?random=3"/>
-                    <img src="https://picsum.photos/800/600?random=4"/>
-                    <img src="https://picsum.photos/800/600?random=5"/>
-            </div>
             <footer>
                 <AliceCarousel mouseTracking items={items}/>
-                <image mouseTracking items={items}/>
             </footer>
         </div>
     );
