@@ -1,4 +1,4 @@
 
-#Gallerie von Jaaminy
+# Gallerie von Jaaminy
 -------------------------------
-##Eine Gallerie mit Bilder und video ;)
+## Eine Gallerie mit Bilder und video ;)
