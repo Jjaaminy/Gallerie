@@ -14,12 +14,11 @@ import {VideoLightbox} from "lightbox.js-react";
 
 
 function App() {
-    const carousel =  useRef>=(0);
 
     const fotos= [
         {
             id: 1,
-            src: "https://picsum.photos/800/600?random=5",
+            src: "https://picsum.photos/800/600?random=1",
             width: 800,
             height: 600,
         },
@@ -32,7 +31,7 @@ function App() {
         {
             id: 3,
             src: "https://picsum.photos/800/600?random=7",
-            width: 2000,
+            width: 700,
             height: 800,
         },
         {
@@ -116,7 +115,8 @@ function App() {
                     renderDotsItem={renderDotsItem}
                     renderNextButton={renderNextButton}
                     renderPrevButton={renderPrevButton}
-                    renderPlayPauseButton={renderPlayPauseButton}/>
+                    renderPlayPauseButton={renderPlayPauseButton}
+                />
 
             </div>
         </div>
