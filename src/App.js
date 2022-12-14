@@ -1,6 +1,6 @@
 
 import './App.css';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -12,7 +12,10 @@ import {VideoLightbox} from "lightbox.js-react";
 
 
 
+
 function App() {
+    const carousel =  useRef>=(0);
+
     const fotos= [
         {
             id: 1,
@@ -51,20 +54,38 @@ function App() {
             height: 700,
         },
     ];
+
+
+    const renderSlideInfo = ({ item, itemsCount }) => {
+        return `${item}\\${itemsCount}` + ' Bild';
+    };
+
+    const renderDotsItem = ({ isActive }) => {
+        return isActive ? 'x' : 'o';
+    };
+
+    const renderPrevButton = ({ isDisabled }) => {
+        return <span style={{ opacity: isDisabled ? '0.5' : 1 }}>&lt;</span>;
+    };
+
+    const renderNextButton = ({ isDisabled }) => {
+        return <span style={{ opacity: isDisabled ? '0.5' : 1 }}>&gt;</span>;
+    };
+
+    const renderPlayPauseButton = ({ isPlaying }) => {
+        return isPlaying ? 'PAUSE' : 'PLAY';
+    };
     const handleDragStart = (e) => e.preventDefault();
 
     const items = [
-        <img src="https://picsum.photos/800/600?random=1" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=2" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=3" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=4" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=5" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=6" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=7" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=8" onDragStart={handleDragStart} role="presentation"/>,
-        <img src="https://picsum.photos/800/600?random=9" onDragStart={handleDragStart} role="presentation"/>,
+        <img src="https://picsum.photos/800/600?random=1" onDragStart={handleDragStart} role="presentation" data-value="1"/>,
+        <img src="https://picsum.photos/800/600?random=2" onDragStart={handleDragStart} role="presentation" data-value="2"/>,
+        <img src="https://picsum.photos/800/600?random=3" onDragStart={handleDragStart} role="presentation" data-value="3"/>,
+        <img src="https://picsum.photos/800/600?random=4" onDragStart={handleDragStart} role="presentation" data-value="4"/>,
+        <img src="https://picsum.photos/800/600?random=5" onDragStart={handleDragStart} role="presentation" data-value="5"/>,
+        <img src="https://picsum.photos/800/600?random=6" onDragStart={handleDragStart} role="presentation" data-value="6"/>,
+        <img src="https://picsum.photos/800/600?random=7" onDragStart={handleDragStart} role="presentation" data-value="7"/>,
     ];
-
     return (
         <div>
             <header>
@@ -84,8 +105,19 @@ function App() {
             </div>
             <br/>
             <div>
-                <AliceCarousel    mouseTracking items={items}/>
-            <br/>
+                <AliceCarousel
+                    key="carousel"
+                    background-color={'black'}
+                    mouseTracking items={items}
+                    autoPlay
+                    mouseTracking
+                    disableSlideInfo={false}
+                    renderSlideInfo={renderSlideInfo}
+                    renderDotsItem={renderDotsItem}
+                    renderNextButton={renderNextButton}
+                    renderPrevButton={renderPrevButton}
+                    renderPlayPauseButton={renderPlayPauseButton}/>
+
             </div>
         </div>
     )
