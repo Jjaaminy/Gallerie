@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+  align-items: center;
 }
+
 
 body{
   background-image: url("bilder/images.jpg");
@@ -19,6 +21,7 @@ body{
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,17 +37,25 @@ body{
   color: #61dafb;
 }
 
+video{
+  align-items: center;
+  width:100%;
+}
+
 h1{
   font-style: italic;
   font-family: "Lucida Calligraphy";
   font-size: xxx-large;
   color: black;
+  text-decoration-style: dotted;
   text-align: center;
+  margin:  0px;
+
 }
 
 header{
-  background-color: rosybrown;
-  color: rosybrown;
+  background-color: lightseagreen;
+  color: lightblue;
 }
 
 @keyframes App-logo-spin {
@@ -54,12 +65,17 @@ header{
   to {
     transform: rotate(360deg);
   }
-
-#Slide {
-  width: 1920px;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-
 }
+
+#slide {
+  align-items: center;
+  margin-top: 10%;
 }
+
+img{
+  margin: 100px;
+  margin:auto;
+  width:100%;
+}
+
+
